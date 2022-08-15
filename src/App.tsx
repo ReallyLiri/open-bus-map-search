@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css'
 import LinePage from "./pages/line-page/LinePage";
-import { Layout, PageHeader, Typography } from "antd";
-const { Header, Footer, Sider, Content } = Layout;
+import { Layout, Typography } from "antd";
+const { Header, Content } = Layout;
 
 function App() {
   return (
