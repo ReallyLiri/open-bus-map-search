@@ -1,21 +1,24 @@
 import React from 'react';
+import './App.css'
+import LinePage from "./pages/line-page/LinePage";
+import { Layout, PageHeader, Typography } from "antd";
+const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Layout>
+            <Header>
+                <Typography.Title level={3} style={{color: 'white'}}>Shamebus</Typography.Title>
+            </Header>
+            <Layout>
+                <Content style={{ margin: '24px 16px 0' }}>
+                    <div style={{ padding: 24, minHeight: 360 }}>
+                        <LinePage/>
+                    </div>
+                </Content>
+            </Layout>
+        </Layout>
     </div>
   );
 }
