@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Typography, Layout, TimePicker, Input } from "antd";
+import { Layout, TimePicker, Input } from "antd";
 import LineSelector from "./LineSelector";
 import DirectionSelector from "./DirectionSelector";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";

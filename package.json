@@ -8,12 +8,12 @@
     "@types/react-dom": "^18.0.6",
     "antd": "^4.22.5",
     "axios": "^0.27.2",
+    "http-proxy-middleware": "^2.0.6",
     "leaflet": "^1.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.0.1",
     "react-scripts": "5.0.1",
-    "stride-api": "file:./stride-api",
     "styled-components": "^5.3.5",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
@@ -22,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate:openapi": "openapi --input https://open-bus-stride-api.hasadna.org.il/openapi.json --output ./src/api/stride-api"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/leaflet": "^1.7.11"
+    "@types/leaflet": "^1.7.11",
+    "openapi-typescript-codegen": "^0.23.0"
   }
 }
