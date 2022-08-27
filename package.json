@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate:openapi": "openapi --input https://open-bus-stride-api.hasadna.org.il/openapi.json --output ./src/api/stride-api"
+    "generate:openapi": "scripts/generate_openapi.sh"
   },
   "eslintConfig": {
     "extends": [
