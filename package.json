@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.0.1",
     "react-scripts": "5.0.1",
+    "stride-api": "file:./stride-api",
     "styled-components": "^5.3.5",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"

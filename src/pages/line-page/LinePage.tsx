@@ -5,6 +5,7 @@ import DirectionSelector from "./DirectionSelector";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import L, { LatLngTuple } from "leaflet";
 import axios from "axios";
+import * as s from "stride-api";
 
 
 const LinePage = (props: {}) => {
@@ -16,6 +17,8 @@ const LinePage = (props: {}) => {
             position => setPosition([position.coords.latitude, position.coords.longitude])
         )
     }, []);
+
+    new s.SiriApi().getSiriRidesGetGet()
 
     const onSearch = useCallback(async () => {
         const result = await axios.get("https://nominatim.openstreetmap.org/search?countrycodes=il&format=json&q=" + encodeURIComponent(query));
