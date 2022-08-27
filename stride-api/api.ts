@@ -1475,154 +1475,6 @@ export interface ValidationError {
 export const GtfsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Return a single gtfs ride stop based on id
-         * @summary Get 
-         * @param {number} id gtfs ride stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getGtfsRideStopsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getGtfsRideStopsGetGet', 'id', id)
-            const localVarPath = `/gtfs_ride_stops/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Return a single gtfs ride based on id
-         * @summary Get 
-         * @param {number} id gtfs ride id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getGtfsRidesGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getGtfsRidesGetGet', 'id', id)
-            const localVarPath = `/gtfs_rides/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Return a single gtfs route based on id
-         * @summary Get 
-         * @param {number} id gtfs route id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getGtfsRoutesGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getGtfsRoutesGetGet', 'id', id)
-            const localVarPath = `/gtfs_routes/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Return a single gtfs stop based on id
-         * @summary Get 
-         * @param {number} id gtfs stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getGtfsStopsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getGtfsStopsGetGet', 'id', id)
-            const localVarPath = `/gtfs_stops/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * List of gtfs agencies.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -1632,7 +1484,7 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsAgenciesListGet: async (limit?: number, offset?: number, dateFrom?: string, dateTo?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        gtfsAgenciesListGet: async (limit?: number, offset?: number, dateFrom?: string, dateTo?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/gtfs_agencies/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1677,6 +1529,43 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single gtfs ride stop based on id
+         * @summary Get 
+         * @param {number} id gtfs ride stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        gtfsRideStopsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('gtfsRideStopsGetGet', 'id', id)
+            const localVarPath = `/gtfs_ride_stops/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of gtfs ride stops.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -1687,7 +1576,7 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsRideStopsListGet: async (limit?: number, offset?: number, getCount?: boolean, gtfsStopIds?: string, gtfsRideIds?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        gtfsRideStopsListGet: async (limit?: number, offset?: number, getCount?: boolean, gtfsStopIds?: string, gtfsRideIds?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/gtfs_ride_stops/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1732,6 +1621,43 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single gtfs ride based on id
+         * @summary Get 
+         * @param {number} id gtfs ride id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        gtfsRidesGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('gtfsRidesGetGet', 'id', id)
+            const localVarPath = `/gtfs_rides/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of gtfs rides.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -1756,7 +1682,7 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsRidesListGet: async (limit?: number, offset?: number, getCount?: boolean, gtfsRouteId?: number, journeyRefPrefix?: string, startTimeFrom?: string, startTimeTo?: string, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        gtfsRidesListGet: async (limit?: number, offset?: number, getCount?: boolean, gtfsRouteId?: number, journeyRefPrefix?: string, startTimeFrom?: string, startTimeTo?: string, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/gtfs_rides/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1865,6 +1791,43 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single gtfs route based on id
+         * @summary Get 
+         * @param {number} id gtfs route id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        gtfsRoutesGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('gtfsRoutesGetGet', 'id', id)
+            const localVarPath = `/gtfs_routes/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of gtfs routes.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -1885,7 +1848,7 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsRoutesListGet: async (limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, lineRefs?: string, operatorRefs?: string, routeShortName?: string, routeLongNameContains?: string, routeMkt?: string, routeDirection?: string, routeAlternative?: string, agencyName?: string, routeType?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        gtfsRoutesListGet: async (limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, lineRefs?: string, operatorRefs?: string, routeShortName?: string, routeLongNameContains?: string, routeMkt?: string, routeDirection?: string, routeAlternative?: string, agencyName?: string, routeType?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/gtfs_routes/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1974,6 +1937,43 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single gtfs stop based on id
+         * @summary Get 
+         * @param {number} id gtfs stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        gtfsStopsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('gtfsStopsGetGet', 'id', id)
+            const localVarPath = `/gtfs_stops/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of gtfs stops.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -1986,7 +1986,7 @@ export const GtfsApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsStopsListGet: async (limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, code?: number, city?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        gtfsStopsListGet: async (limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, code?: number, city?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/gtfs_stops/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -2053,50 +2053,6 @@ export const GtfsApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = GtfsApiAxiosParamCreator(configuration)
     return {
         /**
-         * Return a single gtfs ride stop based on id
-         * @summary Get 
-         * @param {number} id gtfs ride stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getGtfsRideStopsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GtfsRideStopPydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getGtfsRideStopsGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Return a single gtfs ride based on id
-         * @summary Get 
-         * @param {number} id gtfs ride id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getGtfsRidesGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GtfsRidePydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getGtfsRidesGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Return a single gtfs route based on id
-         * @summary Get 
-         * @param {number} id gtfs route id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getGtfsRoutesGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GtfsRoutePydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getGtfsRoutesGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Return a single gtfs stop based on id
-         * @summary Get 
-         * @param {number} id gtfs stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getGtfsStopsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GtfsStopPydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getGtfsStopsGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
          * List of gtfs agencies.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -2106,8 +2062,19 @@ export const GtfsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listGtfsAgenciesListGet(limit?: number, offset?: number, dateFrom?: string, dateTo?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsAgencyPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listGtfsAgenciesListGet(limit, offset, dateFrom, dateTo, options);
+        async gtfsAgenciesListGet(limit?: number, offset?: number, dateFrom?: string, dateTo?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsAgencyPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsAgenciesListGet(limit, offset, dateFrom, dateTo, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single gtfs ride stop based on id
+         * @summary Get 
+         * @param {number} id gtfs ride stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async gtfsRideStopsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GtfsRideStopPydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsRideStopsGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2121,8 +2088,19 @@ export const GtfsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listGtfsRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, gtfsStopIds?: string, gtfsRideIds?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsRideStopPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listGtfsRideStopsListGet(limit, offset, getCount, gtfsStopIds, gtfsRideIds, options);
+        async gtfsRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, gtfsStopIds?: string, gtfsRideIds?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsRideStopPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsRideStopsListGet(limit, offset, getCount, gtfsStopIds, gtfsRideIds, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single gtfs ride based on id
+         * @summary Get 
+         * @param {number} id gtfs ride id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async gtfsRidesGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GtfsRidePydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsRidesGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2150,8 +2128,19 @@ export const GtfsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listGtfsRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteId?: number, journeyRefPrefix?: string, startTimeFrom?: string, startTimeTo?: string, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsRideWithRelatedPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listGtfsRidesListGet(limit, offset, getCount, gtfsRouteId, journeyRefPrefix, startTimeFrom, startTimeTo, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, orderBy, options);
+        async gtfsRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteId?: number, journeyRefPrefix?: string, startTimeFrom?: string, startTimeTo?: string, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsRideWithRelatedPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsRidesListGet(limit, offset, getCount, gtfsRouteId, journeyRefPrefix, startTimeFrom, startTimeTo, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, orderBy, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single gtfs route based on id
+         * @summary Get 
+         * @param {number} id gtfs route id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async gtfsRoutesGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GtfsRoutePydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsRoutesGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2175,8 +2164,19 @@ export const GtfsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listGtfsRoutesListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, lineRefs?: string, operatorRefs?: string, routeShortName?: string, routeLongNameContains?: string, routeMkt?: string, routeDirection?: string, routeAlternative?: string, agencyName?: string, routeType?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsRoutePydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listGtfsRoutesListGet(limit, offset, getCount, dateFrom, dateTo, lineRefs, operatorRefs, routeShortName, routeLongNameContains, routeMkt, routeDirection, routeAlternative, agencyName, routeType, orderBy, options);
+        async gtfsRoutesListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, lineRefs?: string, operatorRefs?: string, routeShortName?: string, routeLongNameContains?: string, routeMkt?: string, routeDirection?: string, routeAlternative?: string, agencyName?: string, routeType?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsRoutePydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsRoutesListGet(limit, offset, getCount, dateFrom, dateTo, lineRefs, operatorRefs, routeShortName, routeLongNameContains, routeMkt, routeDirection, routeAlternative, agencyName, routeType, orderBy, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single gtfs stop based on id
+         * @summary Get 
+         * @param {number} id gtfs stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async gtfsStopsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GtfsStopPydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsStopsGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2192,8 +2192,8 @@ export const GtfsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listGtfsStopsListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, code?: number, city?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsStopPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listGtfsStopsListGet(limit, offset, getCount, dateFrom, dateTo, code, city, options);
+        async gtfsStopsListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, code?: number, city?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<GtfsStopPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.gtfsStopsListGet(limit, offset, getCount, dateFrom, dateTo, code, city, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -2207,46 +2207,6 @@ export const GtfsApiFactory = function (configuration?: Configuration, basePath?
     const localVarFp = GtfsApiFp(configuration)
     return {
         /**
-         * Return a single gtfs ride stop based on id
-         * @summary Get 
-         * @param {number} id gtfs ride stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getGtfsRideStopsGetGet(id: number, options?: any): AxiosPromise<GtfsRideStopPydanticModel> {
-            return localVarFp.getGtfsRideStopsGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Return a single gtfs ride based on id
-         * @summary Get 
-         * @param {number} id gtfs ride id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getGtfsRidesGetGet(id: number, options?: any): AxiosPromise<GtfsRidePydanticModel> {
-            return localVarFp.getGtfsRidesGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Return a single gtfs route based on id
-         * @summary Get 
-         * @param {number} id gtfs route id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getGtfsRoutesGetGet(id: number, options?: any): AxiosPromise<GtfsRoutePydanticModel> {
-            return localVarFp.getGtfsRoutesGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Return a single gtfs stop based on id
-         * @summary Get 
-         * @param {number} id gtfs stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getGtfsStopsGetGet(id: number, options?: any): AxiosPromise<GtfsStopPydanticModel> {
-            return localVarFp.getGtfsStopsGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
          * List of gtfs agencies.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -2256,8 +2216,18 @@ export const GtfsApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsAgenciesListGet(limit?: number, offset?: number, dateFrom?: string, dateTo?: string, options?: any): AxiosPromise<Array<GtfsAgencyPydanticModel>> {
-            return localVarFp.listGtfsAgenciesListGet(limit, offset, dateFrom, dateTo, options).then((request) => request(axios, basePath));
+        gtfsAgenciesListGet(limit?: number, offset?: number, dateFrom?: string, dateTo?: string, options?: any): AxiosPromise<Array<GtfsAgencyPydanticModel>> {
+            return localVarFp.gtfsAgenciesListGet(limit, offset, dateFrom, dateTo, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single gtfs ride stop based on id
+         * @summary Get 
+         * @param {number} id gtfs ride stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        gtfsRideStopsGetGet(id: number, options?: any): AxiosPromise<GtfsRideStopPydanticModel> {
+            return localVarFp.gtfsRideStopsGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of gtfs ride stops.
@@ -2270,8 +2240,18 @@ export const GtfsApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, gtfsStopIds?: string, gtfsRideIds?: string, options?: any): AxiosPromise<Array<GtfsRideStopPydanticModel>> {
-            return localVarFp.listGtfsRideStopsListGet(limit, offset, getCount, gtfsStopIds, gtfsRideIds, options).then((request) => request(axios, basePath));
+        gtfsRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, gtfsStopIds?: string, gtfsRideIds?: string, options?: any): AxiosPromise<Array<GtfsRideStopPydanticModel>> {
+            return localVarFp.gtfsRideStopsListGet(limit, offset, getCount, gtfsStopIds, gtfsRideIds, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single gtfs ride based on id
+         * @summary Get 
+         * @param {number} id gtfs ride id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        gtfsRidesGetGet(id: number, options?: any): AxiosPromise<GtfsRidePydanticModel> {
+            return localVarFp.gtfsRidesGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of gtfs rides.
@@ -2298,8 +2278,18 @@ export const GtfsApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteId?: number, journeyRefPrefix?: string, startTimeFrom?: string, startTimeTo?: string, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, orderBy?: string, options?: any): AxiosPromise<Array<GtfsRideWithRelatedPydanticModel>> {
-            return localVarFp.listGtfsRidesListGet(limit, offset, getCount, gtfsRouteId, journeyRefPrefix, startTimeFrom, startTimeTo, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, orderBy, options).then((request) => request(axios, basePath));
+        gtfsRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteId?: number, journeyRefPrefix?: string, startTimeFrom?: string, startTimeTo?: string, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, orderBy?: string, options?: any): AxiosPromise<Array<GtfsRideWithRelatedPydanticModel>> {
+            return localVarFp.gtfsRidesListGet(limit, offset, getCount, gtfsRouteId, journeyRefPrefix, startTimeFrom, startTimeTo, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, orderBy, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single gtfs route based on id
+         * @summary Get 
+         * @param {number} id gtfs route id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        gtfsRoutesGetGet(id: number, options?: any): AxiosPromise<GtfsRoutePydanticModel> {
+            return localVarFp.gtfsRoutesGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of gtfs routes.
@@ -2322,8 +2312,18 @@ export const GtfsApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsRoutesListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, lineRefs?: string, operatorRefs?: string, routeShortName?: string, routeLongNameContains?: string, routeMkt?: string, routeDirection?: string, routeAlternative?: string, agencyName?: string, routeType?: string, orderBy?: string, options?: any): AxiosPromise<Array<GtfsRoutePydanticModel>> {
-            return localVarFp.listGtfsRoutesListGet(limit, offset, getCount, dateFrom, dateTo, lineRefs, operatorRefs, routeShortName, routeLongNameContains, routeMkt, routeDirection, routeAlternative, agencyName, routeType, orderBy, options).then((request) => request(axios, basePath));
+        gtfsRoutesListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, lineRefs?: string, operatorRefs?: string, routeShortName?: string, routeLongNameContains?: string, routeMkt?: string, routeDirection?: string, routeAlternative?: string, agencyName?: string, routeType?: string, orderBy?: string, options?: any): AxiosPromise<Array<GtfsRoutePydanticModel>> {
+            return localVarFp.gtfsRoutesListGet(limit, offset, getCount, dateFrom, dateTo, lineRefs, operatorRefs, routeShortName, routeLongNameContains, routeMkt, routeDirection, routeAlternative, agencyName, routeType, orderBy, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single gtfs stop based on id
+         * @summary Get 
+         * @param {number} id gtfs stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        gtfsStopsGetGet(id: number, options?: any): AxiosPromise<GtfsStopPydanticModel> {
+            return localVarFp.gtfsStopsGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of gtfs stops.
@@ -2338,8 +2338,8 @@ export const GtfsApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listGtfsStopsListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, code?: number, city?: string, options?: any): AxiosPromise<Array<GtfsStopPydanticModel>> {
-            return localVarFp.listGtfsStopsListGet(limit, offset, getCount, dateFrom, dateTo, code, city, options).then((request) => request(axios, basePath));
+        gtfsStopsListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, code?: number, city?: string, options?: any): AxiosPromise<Array<GtfsStopPydanticModel>> {
+            return localVarFp.gtfsStopsListGet(limit, offset, getCount, dateFrom, dateTo, code, city, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -2352,54 +2352,6 @@ export const GtfsApiFactory = function (configuration?: Configuration, basePath?
  */
 export class GtfsApi extends BaseAPI {
     /**
-     * Return a single gtfs ride stop based on id
-     * @summary Get 
-     * @param {number} id gtfs ride stop id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof GtfsApi
-     */
-    public getGtfsRideStopsGetGet(id: number, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).getGtfsRideStopsGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Return a single gtfs ride based on id
-     * @summary Get 
-     * @param {number} id gtfs ride id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof GtfsApi
-     */
-    public getGtfsRidesGetGet(id: number, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).getGtfsRidesGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Return a single gtfs route based on id
-     * @summary Get 
-     * @param {number} id gtfs route id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof GtfsApi
-     */
-    public getGtfsRoutesGetGet(id: number, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).getGtfsRoutesGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Return a single gtfs stop based on id
-     * @summary Get 
-     * @param {number} id gtfs stop id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof GtfsApi
-     */
-    public getGtfsStopsGetGet(id: number, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).getGtfsStopsGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * List of gtfs agencies.
      * @summary List 
      * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -2410,8 +2362,20 @@ export class GtfsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof GtfsApi
      */
-    public listGtfsAgenciesListGet(limit?: number, offset?: number, dateFrom?: string, dateTo?: string, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).listGtfsAgenciesListGet(limit, offset, dateFrom, dateTo, options).then((request) => request(this.axios, this.basePath));
+    public gtfsAgenciesListGet(limit?: number, offset?: number, dateFrom?: string, dateTo?: string, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsAgenciesListGet(limit, offset, dateFrom, dateTo, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single gtfs ride stop based on id
+     * @summary Get 
+     * @param {number} id gtfs ride stop id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GtfsApi
+     */
+    public gtfsRideStopsGetGet(id: number, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsRideStopsGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2426,8 +2390,20 @@ export class GtfsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof GtfsApi
      */
-    public listGtfsRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, gtfsStopIds?: string, gtfsRideIds?: string, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).listGtfsRideStopsListGet(limit, offset, getCount, gtfsStopIds, gtfsRideIds, options).then((request) => request(this.axios, this.basePath));
+    public gtfsRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, gtfsStopIds?: string, gtfsRideIds?: string, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsRideStopsListGet(limit, offset, getCount, gtfsStopIds, gtfsRideIds, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single gtfs ride based on id
+     * @summary Get 
+     * @param {number} id gtfs ride id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GtfsApi
+     */
+    public gtfsRidesGetGet(id: number, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsRidesGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2456,8 +2432,20 @@ export class GtfsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof GtfsApi
      */
-    public listGtfsRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteId?: number, journeyRefPrefix?: string, startTimeFrom?: string, startTimeTo?: string, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, orderBy?: string, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).listGtfsRidesListGet(limit, offset, getCount, gtfsRouteId, journeyRefPrefix, startTimeFrom, startTimeTo, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, orderBy, options).then((request) => request(this.axios, this.basePath));
+    public gtfsRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteId?: number, journeyRefPrefix?: string, startTimeFrom?: string, startTimeTo?: string, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, orderBy?: string, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsRidesListGet(limit, offset, getCount, gtfsRouteId, journeyRefPrefix, startTimeFrom, startTimeTo, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, orderBy, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single gtfs route based on id
+     * @summary Get 
+     * @param {number} id gtfs route id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GtfsApi
+     */
+    public gtfsRoutesGetGet(id: number, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsRoutesGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2482,8 +2470,20 @@ export class GtfsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof GtfsApi
      */
-    public listGtfsRoutesListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, lineRefs?: string, operatorRefs?: string, routeShortName?: string, routeLongNameContains?: string, routeMkt?: string, routeDirection?: string, routeAlternative?: string, agencyName?: string, routeType?: string, orderBy?: string, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).listGtfsRoutesListGet(limit, offset, getCount, dateFrom, dateTo, lineRefs, operatorRefs, routeShortName, routeLongNameContains, routeMkt, routeDirection, routeAlternative, agencyName, routeType, orderBy, options).then((request) => request(this.axios, this.basePath));
+    public gtfsRoutesListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, lineRefs?: string, operatorRefs?: string, routeShortName?: string, routeLongNameContains?: string, routeMkt?: string, routeDirection?: string, routeAlternative?: string, agencyName?: string, routeType?: string, orderBy?: string, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsRoutesListGet(limit, offset, getCount, dateFrom, dateTo, lineRefs, operatorRefs, routeShortName, routeLongNameContains, routeMkt, routeDirection, routeAlternative, agencyName, routeType, orderBy, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single gtfs stop based on id
+     * @summary Get 
+     * @param {number} id gtfs stop id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof GtfsApi
+     */
+    public gtfsStopsGetGet(id: number, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsStopsGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2500,8 +2500,8 @@ export class GtfsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof GtfsApi
      */
-    public listGtfsStopsListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, code?: number, city?: string, options?: AxiosRequestConfig) {
-        return GtfsApiFp(this.configuration).listGtfsStopsListGet(limit, offset, getCount, dateFrom, dateTo, code, city, options).then((request) => request(this.axios, this.basePath));
+    public gtfsStopsListGet(limit?: number, offset?: number, getCount?: boolean, dateFrom?: string, dateTo?: string, code?: number, city?: string, options?: AxiosRequestConfig) {
+        return GtfsApiFp(this.configuration).gtfsStopsListGet(limit, offset, getCount, dateFrom, dateTo, code, city, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -2519,195 +2519,10 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSiriRideStopsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        siriRideStopsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('getSiriRideStopsGetGet', 'id', id)
+            assertParamExists('siriRideStopsGetGet', 'id', id)
             const localVarPath = `/siri_ride_stops/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Return a single siri ride based on id
-         * @summary Get 
-         * @param {number} id siri ride id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriRidesGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getSiriRidesGetGet', 'id', id)
-            const localVarPath = `/siri_rides/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Return a single siri route based on id
-         * @summary Get 
-         * @param {number} id siri route id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriRoutesGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getSiriRoutesGetGet', 'id', id)
-            const localVarPath = `/siri_routes/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Return a single siri snapshot based on id
-         * @summary Get 
-         * @param {number} id siri snapshot id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriSnapshotsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getSiriSnapshotsGetGet', 'id', id)
-            const localVarPath = `/siri_snapshots/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Return a single siri stop based on id
-         * @summary Get 
-         * @param {number} id siri stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriStopsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getSiriStopsGetGet', 'id', id)
-            const localVarPath = `/siri_stops/get`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (id !== undefined) {
-                localVarQueryParameter['id'] = id;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Return a single siri vehicle location based on id
-         * @summary Get 
-         * @param {number} id siri vehicle location id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriVehicleLocationsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('getSiriVehicleLocationsGetGet', 'id', id)
-            const localVarPath = `/siri_vehicle_locations/get`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -2760,7 +2575,7 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriRideStopsListGet: async (limit?: number, offset?: number, getCount?: boolean, siriStopIds?: string, siriRideIds?: string, siriVehicleLocationLonGreaterOrEqual?: number, siriVehicleLocationLonLowerOrEqual?: number, siriVehicleLocationLatGreaterOrEqual?: number, siriVehicleLocationLatLowerOrEqual?: number, siriVehicleLocationRecordedAtTimeFrom?: string, siriVehicleLocationRecordedAtTimeTo?: string, siriRideScheduledStartTimeFrom?: string, siriRideScheduledStartTimeTo?: string, gtfsStopLatGreaterOrEqual?: number, gtfsStopLatLowerOrEqual?: number, gtfsStopLonGreaterOrEqual?: number, gtfsStopLonLowerOrEqual?: number, gtfsDateFrom?: string, gtfsDateTo?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        siriRideStopsListGet: async (limit?: number, offset?: number, getCount?: boolean, siriStopIds?: string, siriRideIds?: string, siriVehicleLocationLonGreaterOrEqual?: number, siriVehicleLocationLonLowerOrEqual?: number, siriVehicleLocationLatGreaterOrEqual?: number, siriVehicleLocationLatLowerOrEqual?: number, siriVehicleLocationRecordedAtTimeFrom?: string, siriVehicleLocationRecordedAtTimeTo?: string, siriRideScheduledStartTimeFrom?: string, siriRideScheduledStartTimeTo?: string, gtfsStopLatGreaterOrEqual?: number, gtfsStopLatLowerOrEqual?: number, gtfsStopLonGreaterOrEqual?: number, gtfsStopLonLowerOrEqual?: number, gtfsDateFrom?: string, gtfsDateTo?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/siri_ride_stops/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -2877,6 +2692,43 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single siri ride based on id
+         * @summary Get 
+         * @param {number} id siri ride id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriRidesGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('siriRidesGetGet', 'id', id)
+            const localVarPath = `/siri_rides/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of siri rides.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -2909,7 +2761,7 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriRidesListGet: async (limit?: number, offset?: number, getCount?: boolean, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, gtfsRideGtfsRouteId?: number, gtfsRideJourneyRefPrefix?: string, gtfsRideStartTimeFrom?: string, gtfsRideStartTimeTo?: string, siriRouteIds?: string, siriRouteLineRefs?: string, siriRouteOperatorRefs?: string, journeyRefPrefix?: string, journeyRefs?: string, vehicleRefs?: string, scheduledStartTimeFrom?: string, scheduledStartTimeTo?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        siriRidesListGet: async (limit?: number, offset?: number, getCount?: boolean, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, gtfsRideGtfsRouteId?: number, gtfsRideJourneyRefPrefix?: string, gtfsRideStartTimeFrom?: string, gtfsRideStartTimeTo?: string, siriRouteIds?: string, siriRouteLineRefs?: string, siriRouteOperatorRefs?: string, journeyRefPrefix?: string, journeyRefs?: string, vehicleRefs?: string, scheduledStartTimeFrom?: string, scheduledStartTimeTo?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/siri_rides/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -3054,6 +2906,43 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single siri route based on id
+         * @summary Get 
+         * @param {number} id siri route id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriRoutesGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('siriRoutesGetGet', 'id', id)
+            const localVarPath = `/siri_routes/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of siri routes.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -3065,7 +2954,7 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriRoutesListGet: async (limit?: number, offset?: number, getCount?: boolean, lineRefs?: string, operatorRefs?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        siriRoutesListGet: async (limit?: number, offset?: number, getCount?: boolean, lineRefs?: string, operatorRefs?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/siri_routes/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -3114,6 +3003,43 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single siri snapshot based on id
+         * @summary Get 
+         * @param {number} id siri snapshot id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriSnapshotsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('siriSnapshotsGetGet', 'id', id)
+            const localVarPath = `/siri_snapshots/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of siri snapshots.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -3124,7 +3050,7 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriSnapshotsListGet: async (limit?: number, offset?: number, getCount?: boolean, snapshotIdPrefix?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        siriSnapshotsListGet: async (limit?: number, offset?: number, getCount?: boolean, snapshotIdPrefix?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/siri_snapshots/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -3169,6 +3095,43 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single siri stop based on id
+         * @summary Get 
+         * @param {number} id siri stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriStopsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('siriStopsGetGet', 'id', id)
+            const localVarPath = `/siri_stops/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of siri stops.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -3179,7 +3142,7 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriStopsListGet: async (limit?: number, offset?: number, getCount?: boolean, codes?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        siriStopsListGet: async (limit?: number, offset?: number, getCount?: boolean, codes?: string, orderBy?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/siri_stops/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -3224,6 +3187,43 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * Return a single siri vehicle location based on id
+         * @summary Get 
+         * @param {number} id siri vehicle location id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriVehicleLocationsGetGet: async (id: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('siriVehicleLocationsGetGet', 'id', id)
+            const localVarPath = `/siri_vehicle_locations/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['id'] = id;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List of siri vehicle locations.
          * @summary List 
          * @param {number} [limit] Limit the number of returned results. If not specified will limit to 100 results. To get more results, you can either use the offset param, alternatively - set the limit to -1 and use http streaming with compatible json streaming decoder to get all results, this method can fetch up to a maximum of 500000 results.
@@ -3248,7 +3248,7 @@ export const SiriApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriVehicleLocationsListGet: async (limit?: number, offset?: number, getCount?: boolean, siriVehicleLocationIds?: string, siriSnapshotIds?: string, siriRideStopIds?: string, recordedAtTimeFrom?: string, recordedAtTimeTo?: string, lonGreaterOrEqual?: number, lonLowerOrEqual?: number, latGreaterOrEqual?: number, latLowerOrEqual?: number, orderBy?: string, siriRoutesLineRef?: string, siriRoutesOperatorRef?: string, siriRidesSchedualedStartTimeFrom?: string, siriRidesSchedualedStartTimeTo?: string, siriRidesIds?: string, siriRoutesIds?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        siriVehicleLocationsListGet: async (limit?: number, offset?: number, getCount?: boolean, siriVehicleLocationIds?: string, siriSnapshotIds?: string, siriRideStopIds?: string, recordedAtTimeFrom?: string, recordedAtTimeTo?: string, lonGreaterOrEqual?: number, lonLowerOrEqual?: number, latGreaterOrEqual?: number, latLowerOrEqual?: number, orderBy?: string, siriRoutesLineRef?: string, siriRoutesOperatorRef?: string, siriRidesSchedualedStartTimeFrom?: string, siriRidesSchedualedStartTimeTo?: string, siriRidesIds?: string, siriRoutesIds?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/siri_vehicle_locations/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -3373,63 +3373,8 @@ export const SiriApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getSiriRideStopsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriRideStopPydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSiriRideStopsGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Return a single siri ride based on id
-         * @summary Get 
-         * @param {number} id siri ride id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getSiriRidesGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriRidePydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSiriRidesGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Return a single siri route based on id
-         * @summary Get 
-         * @param {number} id siri route id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getSiriRoutesGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriRoutePydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSiriRoutesGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Return a single siri snapshot based on id
-         * @summary Get 
-         * @param {number} id siri snapshot id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getSiriSnapshotsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriSnapshotPydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSiriSnapshotsGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Return a single siri stop based on id
-         * @summary Get 
-         * @param {number} id siri stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getSiriStopsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriStopPydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSiriStopsGetGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Return a single siri vehicle location based on id
-         * @summary Get 
-         * @param {number} id siri vehicle location id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getSiriVehicleLocationsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriVehicleLocationPydanticModel>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getSiriVehicleLocationsGetGet(id, options);
+        async siriRideStopsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriRideStopPydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriRideStopsGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -3458,8 +3403,19 @@ export const SiriApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listSiriRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, siriStopIds?: string, siriRideIds?: string, siriVehicleLocationLonGreaterOrEqual?: number, siriVehicleLocationLonLowerOrEqual?: number, siriVehicleLocationLatGreaterOrEqual?: number, siriVehicleLocationLatLowerOrEqual?: number, siriVehicleLocationRecordedAtTimeFrom?: string, siriVehicleLocationRecordedAtTimeTo?: string, siriRideScheduledStartTimeFrom?: string, siriRideScheduledStartTimeTo?: string, gtfsStopLatGreaterOrEqual?: number, gtfsStopLatLowerOrEqual?: number, gtfsStopLonGreaterOrEqual?: number, gtfsStopLonLowerOrEqual?: number, gtfsDateFrom?: string, gtfsDateTo?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriRideStopWithRelatedPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSiriRideStopsListGet(limit, offset, getCount, siriStopIds, siriRideIds, siriVehicleLocationLonGreaterOrEqual, siriVehicleLocationLonLowerOrEqual, siriVehicleLocationLatGreaterOrEqual, siriVehicleLocationLatLowerOrEqual, siriVehicleLocationRecordedAtTimeFrom, siriVehicleLocationRecordedAtTimeTo, siriRideScheduledStartTimeFrom, siriRideScheduledStartTimeTo, gtfsStopLatGreaterOrEqual, gtfsStopLatLowerOrEqual, gtfsStopLonGreaterOrEqual, gtfsStopLonLowerOrEqual, gtfsDateFrom, gtfsDateTo, orderBy, options);
+        async siriRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, siriStopIds?: string, siriRideIds?: string, siriVehicleLocationLonGreaterOrEqual?: number, siriVehicleLocationLonLowerOrEqual?: number, siriVehicleLocationLatGreaterOrEqual?: number, siriVehicleLocationLatLowerOrEqual?: number, siriVehicleLocationRecordedAtTimeFrom?: string, siriVehicleLocationRecordedAtTimeTo?: string, siriRideScheduledStartTimeFrom?: string, siriRideScheduledStartTimeTo?: string, gtfsStopLatGreaterOrEqual?: number, gtfsStopLatLowerOrEqual?: number, gtfsStopLonGreaterOrEqual?: number, gtfsStopLonLowerOrEqual?: number, gtfsDateFrom?: string, gtfsDateTo?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriRideStopWithRelatedPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriRideStopsListGet(limit, offset, getCount, siriStopIds, siriRideIds, siriVehicleLocationLonGreaterOrEqual, siriVehicleLocationLonLowerOrEqual, siriVehicleLocationLatGreaterOrEqual, siriVehicleLocationLatLowerOrEqual, siriVehicleLocationRecordedAtTimeFrom, siriVehicleLocationRecordedAtTimeTo, siriRideScheduledStartTimeFrom, siriRideScheduledStartTimeTo, gtfsStopLatGreaterOrEqual, gtfsStopLatLowerOrEqual, gtfsStopLonGreaterOrEqual, gtfsStopLonLowerOrEqual, gtfsDateFrom, gtfsDateTo, orderBy, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single siri ride based on id
+         * @summary Get 
+         * @param {number} id siri ride id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async siriRidesGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriRidePydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriRidesGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -3495,8 +3451,19 @@ export const SiriApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listSiriRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, gtfsRideGtfsRouteId?: number, gtfsRideJourneyRefPrefix?: string, gtfsRideStartTimeFrom?: string, gtfsRideStartTimeTo?: string, siriRouteIds?: string, siriRouteLineRefs?: string, siriRouteOperatorRefs?: string, journeyRefPrefix?: string, journeyRefs?: string, vehicleRefs?: string, scheduledStartTimeFrom?: string, scheduledStartTimeTo?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriRideWithRelatedPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSiriRidesListGet(limit, offset, getCount, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, gtfsRideGtfsRouteId, gtfsRideJourneyRefPrefix, gtfsRideStartTimeFrom, gtfsRideStartTimeTo, siriRouteIds, siriRouteLineRefs, siriRouteOperatorRefs, journeyRefPrefix, journeyRefs, vehicleRefs, scheduledStartTimeFrom, scheduledStartTimeTo, orderBy, options);
+        async siriRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, gtfsRideGtfsRouteId?: number, gtfsRideJourneyRefPrefix?: string, gtfsRideStartTimeFrom?: string, gtfsRideStartTimeTo?: string, siriRouteIds?: string, siriRouteLineRefs?: string, siriRouteOperatorRefs?: string, journeyRefPrefix?: string, journeyRefs?: string, vehicleRefs?: string, scheduledStartTimeFrom?: string, scheduledStartTimeTo?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriRideWithRelatedPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriRidesListGet(limit, offset, getCount, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, gtfsRideGtfsRouteId, gtfsRideJourneyRefPrefix, gtfsRideStartTimeFrom, gtfsRideStartTimeTo, siriRouteIds, siriRouteLineRefs, siriRouteOperatorRefs, journeyRefPrefix, journeyRefs, vehicleRefs, scheduledStartTimeFrom, scheduledStartTimeTo, orderBy, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single siri route based on id
+         * @summary Get 
+         * @param {number} id siri route id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async siriRoutesGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriRoutePydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriRoutesGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -3511,8 +3478,19 @@ export const SiriApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listSiriRoutesListGet(limit?: number, offset?: number, getCount?: boolean, lineRefs?: string, operatorRefs?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriRoutePydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSiriRoutesListGet(limit, offset, getCount, lineRefs, operatorRefs, orderBy, options);
+        async siriRoutesListGet(limit?: number, offset?: number, getCount?: boolean, lineRefs?: string, operatorRefs?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriRoutePydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriRoutesListGet(limit, offset, getCount, lineRefs, operatorRefs, orderBy, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single siri snapshot based on id
+         * @summary Get 
+         * @param {number} id siri snapshot id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async siriSnapshotsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriSnapshotPydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriSnapshotsGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -3526,8 +3504,19 @@ export const SiriApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listSiriSnapshotsListGet(limit?: number, offset?: number, getCount?: boolean, snapshotIdPrefix?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriSnapshotPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSiriSnapshotsListGet(limit, offset, getCount, snapshotIdPrefix, orderBy, options);
+        async siriSnapshotsListGet(limit?: number, offset?: number, getCount?: boolean, snapshotIdPrefix?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriSnapshotPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriSnapshotsListGet(limit, offset, getCount, snapshotIdPrefix, orderBy, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single siri stop based on id
+         * @summary Get 
+         * @param {number} id siri stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async siriStopsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriStopPydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriStopsGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -3541,8 +3530,19 @@ export const SiriApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listSiriStopsListGet(limit?: number, offset?: number, getCount?: boolean, codes?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriStopPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSiriStopsListGet(limit, offset, getCount, codes, orderBy, options);
+        async siriStopsListGet(limit?: number, offset?: number, getCount?: boolean, codes?: string, orderBy?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriStopPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriStopsListGet(limit, offset, getCount, codes, orderBy, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Return a single siri vehicle location based on id
+         * @summary Get 
+         * @param {number} id siri vehicle location id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async siriVehicleLocationsGetGet(id: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SiriVehicleLocationPydanticModel>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriVehicleLocationsGetGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -3570,8 +3570,8 @@ export const SiriApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listSiriVehicleLocationsListGet(limit?: number, offset?: number, getCount?: boolean, siriVehicleLocationIds?: string, siriSnapshotIds?: string, siriRideStopIds?: string, recordedAtTimeFrom?: string, recordedAtTimeTo?: string, lonGreaterOrEqual?: number, lonLowerOrEqual?: number, latGreaterOrEqual?: number, latLowerOrEqual?: number, orderBy?: string, siriRoutesLineRef?: string, siriRoutesOperatorRef?: string, siriRidesSchedualedStartTimeFrom?: string, siriRidesSchedualedStartTimeTo?: string, siriRidesIds?: string, siriRoutesIds?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriVehicleLocationWithRelatedPydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listSiriVehicleLocationsListGet(limit, offset, getCount, siriVehicleLocationIds, siriSnapshotIds, siriRideStopIds, recordedAtTimeFrom, recordedAtTimeTo, lonGreaterOrEqual, lonLowerOrEqual, latGreaterOrEqual, latLowerOrEqual, orderBy, siriRoutesLineRef, siriRoutesOperatorRef, siriRidesSchedualedStartTimeFrom, siriRidesSchedualedStartTimeTo, siriRidesIds, siriRoutesIds, options);
+        async siriVehicleLocationsListGet(limit?: number, offset?: number, getCount?: boolean, siriVehicleLocationIds?: string, siriSnapshotIds?: string, siriRideStopIds?: string, recordedAtTimeFrom?: string, recordedAtTimeTo?: string, lonGreaterOrEqual?: number, lonLowerOrEqual?: number, latGreaterOrEqual?: number, latLowerOrEqual?: number, orderBy?: string, siriRoutesLineRef?: string, siriRoutesOperatorRef?: string, siriRidesSchedualedStartTimeFrom?: string, siriRidesSchedualedStartTimeTo?: string, siriRidesIds?: string, siriRoutesIds?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SiriVehicleLocationWithRelatedPydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.siriVehicleLocationsListGet(limit, offset, getCount, siriVehicleLocationIds, siriSnapshotIds, siriRideStopIds, recordedAtTimeFrom, recordedAtTimeTo, lonGreaterOrEqual, lonLowerOrEqual, latGreaterOrEqual, latLowerOrEqual, orderBy, siriRoutesLineRef, siriRoutesOperatorRef, siriRidesSchedualedStartTimeFrom, siriRidesSchedualedStartTimeTo, siriRidesIds, siriRoutesIds, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -3591,58 +3591,8 @@ export const SiriApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSiriRideStopsGetGet(id: number, options?: any): AxiosPromise<SiriRideStopPydanticModel> {
-            return localVarFp.getSiriRideStopsGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Return a single siri ride based on id
-         * @summary Get 
-         * @param {number} id siri ride id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriRidesGetGet(id: number, options?: any): AxiosPromise<SiriRidePydanticModel> {
-            return localVarFp.getSiriRidesGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Return a single siri route based on id
-         * @summary Get 
-         * @param {number} id siri route id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriRoutesGetGet(id: number, options?: any): AxiosPromise<SiriRoutePydanticModel> {
-            return localVarFp.getSiriRoutesGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Return a single siri snapshot based on id
-         * @summary Get 
-         * @param {number} id siri snapshot id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriSnapshotsGetGet(id: number, options?: any): AxiosPromise<SiriSnapshotPydanticModel> {
-            return localVarFp.getSiriSnapshotsGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Return a single siri stop based on id
-         * @summary Get 
-         * @param {number} id siri stop id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriStopsGetGet(id: number, options?: any): AxiosPromise<SiriStopPydanticModel> {
-            return localVarFp.getSiriStopsGetGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Return a single siri vehicle location based on id
-         * @summary Get 
-         * @param {number} id siri vehicle location id to get
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getSiriVehicleLocationsGetGet(id: number, options?: any): AxiosPromise<SiriVehicleLocationPydanticModel> {
-            return localVarFp.getSiriVehicleLocationsGetGet(id, options).then((request) => request(axios, basePath));
+        siriRideStopsGetGet(id: number, options?: any): AxiosPromise<SiriRideStopPydanticModel> {
+            return localVarFp.siriRideStopsGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of siri ride stops.
@@ -3670,8 +3620,18 @@ export const SiriApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, siriStopIds?: string, siriRideIds?: string, siriVehicleLocationLonGreaterOrEqual?: number, siriVehicleLocationLonLowerOrEqual?: number, siriVehicleLocationLatGreaterOrEqual?: number, siriVehicleLocationLatLowerOrEqual?: number, siriVehicleLocationRecordedAtTimeFrom?: string, siriVehicleLocationRecordedAtTimeTo?: string, siriRideScheduledStartTimeFrom?: string, siriRideScheduledStartTimeTo?: string, gtfsStopLatGreaterOrEqual?: number, gtfsStopLatLowerOrEqual?: number, gtfsStopLonGreaterOrEqual?: number, gtfsStopLonLowerOrEqual?: number, gtfsDateFrom?: string, gtfsDateTo?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriRideStopWithRelatedPydanticModel>> {
-            return localVarFp.listSiriRideStopsListGet(limit, offset, getCount, siriStopIds, siriRideIds, siriVehicleLocationLonGreaterOrEqual, siriVehicleLocationLonLowerOrEqual, siriVehicleLocationLatGreaterOrEqual, siriVehicleLocationLatLowerOrEqual, siriVehicleLocationRecordedAtTimeFrom, siriVehicleLocationRecordedAtTimeTo, siriRideScheduledStartTimeFrom, siriRideScheduledStartTimeTo, gtfsStopLatGreaterOrEqual, gtfsStopLatLowerOrEqual, gtfsStopLonGreaterOrEqual, gtfsStopLonLowerOrEqual, gtfsDateFrom, gtfsDateTo, orderBy, options).then((request) => request(axios, basePath));
+        siriRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, siriStopIds?: string, siriRideIds?: string, siriVehicleLocationLonGreaterOrEqual?: number, siriVehicleLocationLonLowerOrEqual?: number, siriVehicleLocationLatGreaterOrEqual?: number, siriVehicleLocationLatLowerOrEqual?: number, siriVehicleLocationRecordedAtTimeFrom?: string, siriVehicleLocationRecordedAtTimeTo?: string, siriRideScheduledStartTimeFrom?: string, siriRideScheduledStartTimeTo?: string, gtfsStopLatGreaterOrEqual?: number, gtfsStopLatLowerOrEqual?: number, gtfsStopLonGreaterOrEqual?: number, gtfsStopLonLowerOrEqual?: number, gtfsDateFrom?: string, gtfsDateTo?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriRideStopWithRelatedPydanticModel>> {
+            return localVarFp.siriRideStopsListGet(limit, offset, getCount, siriStopIds, siriRideIds, siriVehicleLocationLonGreaterOrEqual, siriVehicleLocationLonLowerOrEqual, siriVehicleLocationLatGreaterOrEqual, siriVehicleLocationLatLowerOrEqual, siriVehicleLocationRecordedAtTimeFrom, siriVehicleLocationRecordedAtTimeTo, siriRideScheduledStartTimeFrom, siriRideScheduledStartTimeTo, gtfsStopLatGreaterOrEqual, gtfsStopLatLowerOrEqual, gtfsStopLonGreaterOrEqual, gtfsStopLonLowerOrEqual, gtfsDateFrom, gtfsDateTo, orderBy, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single siri ride based on id
+         * @summary Get 
+         * @param {number} id siri ride id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriRidesGetGet(id: number, options?: any): AxiosPromise<SiriRidePydanticModel> {
+            return localVarFp.siriRidesGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of siri rides.
@@ -3706,8 +3666,18 @@ export const SiriApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, gtfsRideGtfsRouteId?: number, gtfsRideJourneyRefPrefix?: string, gtfsRideStartTimeFrom?: string, gtfsRideStartTimeTo?: string, siriRouteIds?: string, siriRouteLineRefs?: string, siriRouteOperatorRefs?: string, journeyRefPrefix?: string, journeyRefs?: string, vehicleRefs?: string, scheduledStartTimeFrom?: string, scheduledStartTimeTo?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriRideWithRelatedPydanticModel>> {
-            return localVarFp.listSiriRidesListGet(limit, offset, getCount, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, gtfsRideGtfsRouteId, gtfsRideJourneyRefPrefix, gtfsRideStartTimeFrom, gtfsRideStartTimeTo, siriRouteIds, siriRouteLineRefs, siriRouteOperatorRefs, journeyRefPrefix, journeyRefs, vehicleRefs, scheduledStartTimeFrom, scheduledStartTimeTo, orderBy, options).then((request) => request(axios, basePath));
+        siriRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, gtfsRideGtfsRouteId?: number, gtfsRideJourneyRefPrefix?: string, gtfsRideStartTimeFrom?: string, gtfsRideStartTimeTo?: string, siriRouteIds?: string, siriRouteLineRefs?: string, siriRouteOperatorRefs?: string, journeyRefPrefix?: string, journeyRefs?: string, vehicleRefs?: string, scheduledStartTimeFrom?: string, scheduledStartTimeTo?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriRideWithRelatedPydanticModel>> {
+            return localVarFp.siriRidesListGet(limit, offset, getCount, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, gtfsRideGtfsRouteId, gtfsRideJourneyRefPrefix, gtfsRideStartTimeFrom, gtfsRideStartTimeTo, siriRouteIds, siriRouteLineRefs, siriRouteOperatorRefs, journeyRefPrefix, journeyRefs, vehicleRefs, scheduledStartTimeFrom, scheduledStartTimeTo, orderBy, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single siri route based on id
+         * @summary Get 
+         * @param {number} id siri route id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriRoutesGetGet(id: number, options?: any): AxiosPromise<SiriRoutePydanticModel> {
+            return localVarFp.siriRoutesGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of siri routes.
@@ -3721,8 +3691,18 @@ export const SiriApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriRoutesListGet(limit?: number, offset?: number, getCount?: boolean, lineRefs?: string, operatorRefs?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriRoutePydanticModel>> {
-            return localVarFp.listSiriRoutesListGet(limit, offset, getCount, lineRefs, operatorRefs, orderBy, options).then((request) => request(axios, basePath));
+        siriRoutesListGet(limit?: number, offset?: number, getCount?: boolean, lineRefs?: string, operatorRefs?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriRoutePydanticModel>> {
+            return localVarFp.siriRoutesListGet(limit, offset, getCount, lineRefs, operatorRefs, orderBy, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single siri snapshot based on id
+         * @summary Get 
+         * @param {number} id siri snapshot id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriSnapshotsGetGet(id: number, options?: any): AxiosPromise<SiriSnapshotPydanticModel> {
+            return localVarFp.siriSnapshotsGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of siri snapshots.
@@ -3735,8 +3715,18 @@ export const SiriApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriSnapshotsListGet(limit?: number, offset?: number, getCount?: boolean, snapshotIdPrefix?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriSnapshotPydanticModel>> {
-            return localVarFp.listSiriSnapshotsListGet(limit, offset, getCount, snapshotIdPrefix, orderBy, options).then((request) => request(axios, basePath));
+        siriSnapshotsListGet(limit?: number, offset?: number, getCount?: boolean, snapshotIdPrefix?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriSnapshotPydanticModel>> {
+            return localVarFp.siriSnapshotsListGet(limit, offset, getCount, snapshotIdPrefix, orderBy, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single siri stop based on id
+         * @summary Get 
+         * @param {number} id siri stop id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriStopsGetGet(id: number, options?: any): AxiosPromise<SiriStopPydanticModel> {
+            return localVarFp.siriStopsGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of siri stops.
@@ -3749,8 +3739,18 @@ export const SiriApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriStopsListGet(limit?: number, offset?: number, getCount?: boolean, codes?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriStopPydanticModel>> {
-            return localVarFp.listSiriStopsListGet(limit, offset, getCount, codes, orderBy, options).then((request) => request(axios, basePath));
+        siriStopsListGet(limit?: number, offset?: number, getCount?: boolean, codes?: string, orderBy?: string, options?: any): AxiosPromise<Array<SiriStopPydanticModel>> {
+            return localVarFp.siriStopsListGet(limit, offset, getCount, codes, orderBy, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return a single siri vehicle location based on id
+         * @summary Get 
+         * @param {number} id siri vehicle location id to get
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        siriVehicleLocationsGetGet(id: number, options?: any): AxiosPromise<SiriVehicleLocationPydanticModel> {
+            return localVarFp.siriVehicleLocationsGetGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * List of siri vehicle locations.
@@ -3777,8 +3777,8 @@ export const SiriApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listSiriVehicleLocationsListGet(limit?: number, offset?: number, getCount?: boolean, siriVehicleLocationIds?: string, siriSnapshotIds?: string, siriRideStopIds?: string, recordedAtTimeFrom?: string, recordedAtTimeTo?: string, lonGreaterOrEqual?: number, lonLowerOrEqual?: number, latGreaterOrEqual?: number, latLowerOrEqual?: number, orderBy?: string, siriRoutesLineRef?: string, siriRoutesOperatorRef?: string, siriRidesSchedualedStartTimeFrom?: string, siriRidesSchedualedStartTimeTo?: string, siriRidesIds?: string, siriRoutesIds?: string, options?: any): AxiosPromise<Array<SiriVehicleLocationWithRelatedPydanticModel>> {
-            return localVarFp.listSiriVehicleLocationsListGet(limit, offset, getCount, siriVehicleLocationIds, siriSnapshotIds, siriRideStopIds, recordedAtTimeFrom, recordedAtTimeTo, lonGreaterOrEqual, lonLowerOrEqual, latGreaterOrEqual, latLowerOrEqual, orderBy, siriRoutesLineRef, siriRoutesOperatorRef, siriRidesSchedualedStartTimeFrom, siriRidesSchedualedStartTimeTo, siriRidesIds, siriRoutesIds, options).then((request) => request(axios, basePath));
+        siriVehicleLocationsListGet(limit?: number, offset?: number, getCount?: boolean, siriVehicleLocationIds?: string, siriSnapshotIds?: string, siriRideStopIds?: string, recordedAtTimeFrom?: string, recordedAtTimeTo?: string, lonGreaterOrEqual?: number, lonLowerOrEqual?: number, latGreaterOrEqual?: number, latLowerOrEqual?: number, orderBy?: string, siriRoutesLineRef?: string, siriRoutesOperatorRef?: string, siriRidesSchedualedStartTimeFrom?: string, siriRidesSchedualedStartTimeTo?: string, siriRidesIds?: string, siriRoutesIds?: string, options?: any): AxiosPromise<Array<SiriVehicleLocationWithRelatedPydanticModel>> {
+            return localVarFp.siriVehicleLocationsListGet(limit, offset, getCount, siriVehicleLocationIds, siriSnapshotIds, siriRideStopIds, recordedAtTimeFrom, recordedAtTimeTo, lonGreaterOrEqual, lonLowerOrEqual, latGreaterOrEqual, latLowerOrEqual, orderBy, siriRoutesLineRef, siriRoutesOperatorRef, siriRidesSchedualedStartTimeFrom, siriRidesSchedualedStartTimeTo, siriRidesIds, siriRoutesIds, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -3798,68 +3798,8 @@ export class SiriApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SiriApi
      */
-    public getSiriRideStopsGetGet(id: number, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).getSiriRideStopsGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Return a single siri ride based on id
-     * @summary Get 
-     * @param {number} id siri ride id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SiriApi
-     */
-    public getSiriRidesGetGet(id: number, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).getSiriRidesGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Return a single siri route based on id
-     * @summary Get 
-     * @param {number} id siri route id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SiriApi
-     */
-    public getSiriRoutesGetGet(id: number, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).getSiriRoutesGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Return a single siri snapshot based on id
-     * @summary Get 
-     * @param {number} id siri snapshot id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SiriApi
-     */
-    public getSiriSnapshotsGetGet(id: number, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).getSiriSnapshotsGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Return a single siri stop based on id
-     * @summary Get 
-     * @param {number} id siri stop id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SiriApi
-     */
-    public getSiriStopsGetGet(id: number, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).getSiriStopsGetGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Return a single siri vehicle location based on id
-     * @summary Get 
-     * @param {number} id siri vehicle location id to get
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SiriApi
-     */
-    public getSiriVehicleLocationsGetGet(id: number, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).getSiriVehicleLocationsGetGet(id, options).then((request) => request(this.axios, this.basePath));
+    public siriRideStopsGetGet(id: number, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriRideStopsGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3889,8 +3829,20 @@ export class SiriApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SiriApi
      */
-    public listSiriRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, siriStopIds?: string, siriRideIds?: string, siriVehicleLocationLonGreaterOrEqual?: number, siriVehicleLocationLonLowerOrEqual?: number, siriVehicleLocationLatGreaterOrEqual?: number, siriVehicleLocationLatLowerOrEqual?: number, siriVehicleLocationRecordedAtTimeFrom?: string, siriVehicleLocationRecordedAtTimeTo?: string, siriRideScheduledStartTimeFrom?: string, siriRideScheduledStartTimeTo?: string, gtfsStopLatGreaterOrEqual?: number, gtfsStopLatLowerOrEqual?: number, gtfsStopLonGreaterOrEqual?: number, gtfsStopLonLowerOrEqual?: number, gtfsDateFrom?: string, gtfsDateTo?: string, orderBy?: string, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).listSiriRideStopsListGet(limit, offset, getCount, siriStopIds, siriRideIds, siriVehicleLocationLonGreaterOrEqual, siriVehicleLocationLonLowerOrEqual, siriVehicleLocationLatGreaterOrEqual, siriVehicleLocationLatLowerOrEqual, siriVehicleLocationRecordedAtTimeFrom, siriVehicleLocationRecordedAtTimeTo, siriRideScheduledStartTimeFrom, siriRideScheduledStartTimeTo, gtfsStopLatGreaterOrEqual, gtfsStopLatLowerOrEqual, gtfsStopLonGreaterOrEqual, gtfsStopLonLowerOrEqual, gtfsDateFrom, gtfsDateTo, orderBy, options).then((request) => request(this.axios, this.basePath));
+    public siriRideStopsListGet(limit?: number, offset?: number, getCount?: boolean, siriStopIds?: string, siriRideIds?: string, siriVehicleLocationLonGreaterOrEqual?: number, siriVehicleLocationLonLowerOrEqual?: number, siriVehicleLocationLatGreaterOrEqual?: number, siriVehicleLocationLatLowerOrEqual?: number, siriVehicleLocationRecordedAtTimeFrom?: string, siriVehicleLocationRecordedAtTimeTo?: string, siriRideScheduledStartTimeFrom?: string, siriRideScheduledStartTimeTo?: string, gtfsStopLatGreaterOrEqual?: number, gtfsStopLatLowerOrEqual?: number, gtfsStopLonGreaterOrEqual?: number, gtfsStopLonLowerOrEqual?: number, gtfsDateFrom?: string, gtfsDateTo?: string, orderBy?: string, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriRideStopsListGet(limit, offset, getCount, siriStopIds, siriRideIds, siriVehicleLocationLonGreaterOrEqual, siriVehicleLocationLonLowerOrEqual, siriVehicleLocationLatGreaterOrEqual, siriVehicleLocationLatLowerOrEqual, siriVehicleLocationRecordedAtTimeFrom, siriVehicleLocationRecordedAtTimeTo, siriRideScheduledStartTimeFrom, siriRideScheduledStartTimeTo, gtfsStopLatGreaterOrEqual, gtfsStopLatLowerOrEqual, gtfsStopLonGreaterOrEqual, gtfsStopLonLowerOrEqual, gtfsDateFrom, gtfsDateTo, orderBy, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single siri ride based on id
+     * @summary Get 
+     * @param {number} id siri ride id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SiriApi
+     */
+    public siriRidesGetGet(id: number, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriRidesGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3927,8 +3879,20 @@ export class SiriApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SiriApi
      */
-    public listSiriRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, gtfsRideGtfsRouteId?: number, gtfsRideJourneyRefPrefix?: string, gtfsRideStartTimeFrom?: string, gtfsRideStartTimeTo?: string, siriRouteIds?: string, siriRouteLineRefs?: string, siriRouteOperatorRefs?: string, journeyRefPrefix?: string, journeyRefs?: string, vehicleRefs?: string, scheduledStartTimeFrom?: string, scheduledStartTimeTo?: string, orderBy?: string, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).listSiriRidesListGet(limit, offset, getCount, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, gtfsRideGtfsRouteId, gtfsRideJourneyRefPrefix, gtfsRideStartTimeFrom, gtfsRideStartTimeTo, siriRouteIds, siriRouteLineRefs, siriRouteOperatorRefs, journeyRefPrefix, journeyRefs, vehicleRefs, scheduledStartTimeFrom, scheduledStartTimeTo, orderBy, options).then((request) => request(this.axios, this.basePath));
+    public siriRidesListGet(limit?: number, offset?: number, getCount?: boolean, gtfsRouteDateFrom?: string, gtfsRouteDateTo?: string, gtfsRouteLineRefs?: string, gtfsRouteOperatorRefs?: string, gtfsRouteRouteShortName?: string, gtfsRouteRouteLongNameContains?: string, gtfsRouteRouteMkt?: string, gtfsRouteRouteDirection?: string, gtfsRouteRouteAlternative?: string, gtfsRouteAgencyName?: string, gtfsRouteRouteType?: string, gtfsRideGtfsRouteId?: number, gtfsRideJourneyRefPrefix?: string, gtfsRideStartTimeFrom?: string, gtfsRideStartTimeTo?: string, siriRouteIds?: string, siriRouteLineRefs?: string, siriRouteOperatorRefs?: string, journeyRefPrefix?: string, journeyRefs?: string, vehicleRefs?: string, scheduledStartTimeFrom?: string, scheduledStartTimeTo?: string, orderBy?: string, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriRidesListGet(limit, offset, getCount, gtfsRouteDateFrom, gtfsRouteDateTo, gtfsRouteLineRefs, gtfsRouteOperatorRefs, gtfsRouteRouteShortName, gtfsRouteRouteLongNameContains, gtfsRouteRouteMkt, gtfsRouteRouteDirection, gtfsRouteRouteAlternative, gtfsRouteAgencyName, gtfsRouteRouteType, gtfsRideGtfsRouteId, gtfsRideJourneyRefPrefix, gtfsRideStartTimeFrom, gtfsRideStartTimeTo, siriRouteIds, siriRouteLineRefs, siriRouteOperatorRefs, journeyRefPrefix, journeyRefs, vehicleRefs, scheduledStartTimeFrom, scheduledStartTimeTo, orderBy, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single siri route based on id
+     * @summary Get 
+     * @param {number} id siri route id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SiriApi
+     */
+    public siriRoutesGetGet(id: number, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriRoutesGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3944,8 +3908,20 @@ export class SiriApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SiriApi
      */
-    public listSiriRoutesListGet(limit?: number, offset?: number, getCount?: boolean, lineRefs?: string, operatorRefs?: string, orderBy?: string, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).listSiriRoutesListGet(limit, offset, getCount, lineRefs, operatorRefs, orderBy, options).then((request) => request(this.axios, this.basePath));
+    public siriRoutesListGet(limit?: number, offset?: number, getCount?: boolean, lineRefs?: string, operatorRefs?: string, orderBy?: string, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriRoutesListGet(limit, offset, getCount, lineRefs, operatorRefs, orderBy, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single siri snapshot based on id
+     * @summary Get 
+     * @param {number} id siri snapshot id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SiriApi
+     */
+    public siriSnapshotsGetGet(id: number, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriSnapshotsGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3960,8 +3936,20 @@ export class SiriApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SiriApi
      */
-    public listSiriSnapshotsListGet(limit?: number, offset?: number, getCount?: boolean, snapshotIdPrefix?: string, orderBy?: string, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).listSiriSnapshotsListGet(limit, offset, getCount, snapshotIdPrefix, orderBy, options).then((request) => request(this.axios, this.basePath));
+    public siriSnapshotsListGet(limit?: number, offset?: number, getCount?: boolean, snapshotIdPrefix?: string, orderBy?: string, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriSnapshotsListGet(limit, offset, getCount, snapshotIdPrefix, orderBy, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single siri stop based on id
+     * @summary Get 
+     * @param {number} id siri stop id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SiriApi
+     */
+    public siriStopsGetGet(id: number, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriStopsGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3976,8 +3964,20 @@ export class SiriApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SiriApi
      */
-    public listSiriStopsListGet(limit?: number, offset?: number, getCount?: boolean, codes?: string, orderBy?: string, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).listSiriStopsListGet(limit, offset, getCount, codes, orderBy, options).then((request) => request(this.axios, this.basePath));
+    public siriStopsListGet(limit?: number, offset?: number, getCount?: boolean, codes?: string, orderBy?: string, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriStopsListGet(limit, offset, getCount, codes, orderBy, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return a single siri vehicle location based on id
+     * @summary Get 
+     * @param {number} id siri vehicle location id to get
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SiriApi
+     */
+    public siriVehicleLocationsGetGet(id: number, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriVehicleLocationsGetGet(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -4006,8 +4006,8 @@ export class SiriApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SiriApi
      */
-    public listSiriVehicleLocationsListGet(limit?: number, offset?: number, getCount?: boolean, siriVehicleLocationIds?: string, siriSnapshotIds?: string, siriRideStopIds?: string, recordedAtTimeFrom?: string, recordedAtTimeTo?: string, lonGreaterOrEqual?: number, lonLowerOrEqual?: number, latGreaterOrEqual?: number, latLowerOrEqual?: number, orderBy?: string, siriRoutesLineRef?: string, siriRoutesOperatorRef?: string, siriRidesSchedualedStartTimeFrom?: string, siriRidesSchedualedStartTimeTo?: string, siriRidesIds?: string, siriRoutesIds?: string, options?: AxiosRequestConfig) {
-        return SiriApiFp(this.configuration).listSiriVehicleLocationsListGet(limit, offset, getCount, siriVehicleLocationIds, siriSnapshotIds, siriRideStopIds, recordedAtTimeFrom, recordedAtTimeTo, lonGreaterOrEqual, lonLowerOrEqual, latGreaterOrEqual, latLowerOrEqual, orderBy, siriRoutesLineRef, siriRoutesOperatorRef, siriRidesSchedualedStartTimeFrom, siriRidesSchedualedStartTimeTo, siriRidesIds, siriRoutesIds, options).then((request) => request(this.axios, this.basePath));
+    public siriVehicleLocationsListGet(limit?: number, offset?: number, getCount?: boolean, siriVehicleLocationIds?: string, siriSnapshotIds?: string, siriRideStopIds?: string, recordedAtTimeFrom?: string, recordedAtTimeTo?: string, lonGreaterOrEqual?: number, lonLowerOrEqual?: number, latGreaterOrEqual?: number, latLowerOrEqual?: number, orderBy?: string, siriRoutesLineRef?: string, siriRoutesOperatorRef?: string, siriRidesSchedualedStartTimeFrom?: string, siriRidesSchedualedStartTimeTo?: string, siriRidesIds?: string, siriRoutesIds?: string, options?: AxiosRequestConfig) {
+        return SiriApiFp(this.configuration).siriVehicleLocationsListGet(limit, offset, getCount, siriVehicleLocationIds, siriSnapshotIds, siriRideStopIds, recordedAtTimeFrom, recordedAtTimeTo, lonGreaterOrEqual, lonLowerOrEqual, latGreaterOrEqual, latLowerOrEqual, orderBy, siriRoutesLineRef, siriRoutesOperatorRef, siriRidesSchedualedStartTimeFrom, siriRidesSchedualedStartTimeTo, siriRidesIds, siriRoutesIds, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -4030,7 +4030,7 @@ export const UserCasesApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRouteTimetableListGet: async (limit?: number, offset?: number, getCount?: boolean, plannedStartTimeDateFrom?: string, plannedStartTimeDateTo?: string, lineRefs?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        routeTimetableListGet: async (limit?: number, offset?: number, getCount?: boolean, plannedStartTimeDateFrom?: string, plannedStartTimeDateTo?: string, lineRefs?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/route_timetable/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -4104,8 +4104,8 @@ export const UserCasesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listRouteTimetableListGet(limit?: number, offset?: number, getCount?: boolean, plannedStartTimeDateFrom?: string, plannedStartTimeDateTo?: string, lineRefs?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<RouteTimetablePydanticModel>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listRouteTimetableListGet(limit, offset, getCount, plannedStartTimeDateFrom, plannedStartTimeDateTo, lineRefs, options);
+        async routeTimetableListGet(limit?: number, offset?: number, getCount?: boolean, plannedStartTimeDateFrom?: string, plannedStartTimeDateTo?: string, lineRefs?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<RouteTimetablePydanticModel>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.routeTimetableListGet(limit, offset, getCount, plannedStartTimeDateFrom, plannedStartTimeDateTo, lineRefs, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -4130,8 +4130,8 @@ export const UserCasesApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRouteTimetableListGet(limit?: number, offset?: number, getCount?: boolean, plannedStartTimeDateFrom?: string, plannedStartTimeDateTo?: string, lineRefs?: string, options?: any): AxiosPromise<Array<RouteTimetablePydanticModel>> {
-            return localVarFp.listRouteTimetableListGet(limit, offset, getCount, plannedStartTimeDateFrom, plannedStartTimeDateTo, lineRefs, options).then((request) => request(axios, basePath));
+        routeTimetableListGet(limit?: number, offset?: number, getCount?: boolean, plannedStartTimeDateFrom?: string, plannedStartTimeDateTo?: string, lineRefs?: string, options?: any): AxiosPromise<Array<RouteTimetablePydanticModel>> {
+            return localVarFp.routeTimetableListGet(limit, offset, getCount, plannedStartTimeDateFrom, plannedStartTimeDateTo, lineRefs, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -4156,8 +4156,8 @@ export class UserCasesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserCasesApi
      */
-    public listRouteTimetableListGet(limit?: number, offset?: number, getCount?: boolean, plannedStartTimeDateFrom?: string, plannedStartTimeDateTo?: string, lineRefs?: string, options?: AxiosRequestConfig) {
-        return UserCasesApiFp(this.configuration).listRouteTimetableListGet(limit, offset, getCount, plannedStartTimeDateFrom, plannedStartTimeDateTo, lineRefs, options).then((request) => request(this.axios, this.basePath));
+    public routeTimetableListGet(limit?: number, offset?: number, getCount?: boolean, plannedStartTimeDateFrom?: string, plannedStartTimeDateTo?: string, lineRefs?: string, options?: AxiosRequestConfig) {
+        return UserCasesApiFp(this.configuration).routeTimetableListGet(limit, offset, getCount, plannedStartTimeDateFrom, plannedStartTimeDateTo, lineRefs, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
